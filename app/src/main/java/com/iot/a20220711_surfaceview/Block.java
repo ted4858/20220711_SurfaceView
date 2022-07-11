@@ -4,12 +4,12 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 
 public class Block {
     private Drawable image = null;
     private Point point = new Point();
     private Point size = new Point();
-    private Rect rect = new Rect();
 
     public Drawable getImage() {
         return image;
@@ -38,5 +38,9 @@ public class Block {
     public void draw(Canvas canvas) {
         image.setBounds(point.x, point.y, point.x+size.x, point.y+size.y);
         image.draw(canvas);
+    }
+
+    public void crushBlock() {
+
     }
 }
