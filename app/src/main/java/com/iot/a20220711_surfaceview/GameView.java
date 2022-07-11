@@ -30,12 +30,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 Canvas canvas = holder.lockCanvas();
                 bg.draw(canvas);
                 ball.draw(canvas);
+                block1.draw(canvas);
+                block2.draw(canvas);
+                block3.draw(canvas);
+                block4.draw(canvas);
+                block5.draw(canvas);
                 holder.unlockCanvasAndPost(canvas);
             }
         }
     };
 
     private Ball ball;
+    private Block block1, block2, block3, block4, block5;
 
     public GameView(Context context) {
         super(context);
@@ -49,10 +55,31 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public void surfaceCreated(SurfaceHolder holder) {
         renderer.start();
         ball = new Ball();
+        block1 = new Block();
+        block2 = new Block();
+        block3 = new Block();
+        block4 = new Block();
+        block5 = new Block();
 
         ball.setImage(getResources().getDrawable(R.drawable.red_ball));
-        ball.setSize(new Point(100,100));
-        ball.setPoint(new Point(0,0));
+        ball.setSize(new Point(50,50));
+        ball.setPoint(new Point(240,350));
+
+        block1.setImage(getResources().getDrawable(R.drawable.block1));
+        block1.setSize(new Point(110,40));
+        block1.setPoint(new Point(20,20));
+        block2.setImage(getResources().getDrawable(R.drawable.block2));
+        block2.setSize(new Point(110,40));
+        block2.setPoint(new Point(130,20));
+        block3.setImage(getResources().getDrawable(R.drawable.block3));
+        block3.setSize(new Point(110,40));
+        block3.setPoint(new Point(240,20));
+        block4.setImage(getResources().getDrawable(R.drawable.block4));
+        block4.setSize(new Point(110,40));
+        block4.setPoint(new Point(350,20));
+        block5.setImage(getResources().getDrawable(R.drawable.block5));
+        block5.setSize(new Point(110,40));
+        block5.setPoint(new Point(180,600));
     }
 
     @Override
